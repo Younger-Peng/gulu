@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Younger-Peng/gulu#readme",
   "dependencies": {
     "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
   }
 }
