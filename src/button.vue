@@ -56,6 +56,7 @@
         }
         > .content {
             order: 2;
+            line-height: 1em;
         }
         &.icon-right {
             > .content { order: 1; }
