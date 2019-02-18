@@ -9,8 +9,9 @@ export default {
     mounted() {
         for (const node of this.$el.children) {
             const name = node.nodeName.toLowerCase()
-            if (name !== 'button') {
-                console.warn(`g-button-group 的子元素应该全是 <g-button />，但是你写的是 ${name}`)
+            console.log(node.classList)
+            if (name !== 'button' || !node.classList.includes('g-button')) {
+                console.warn('g-button-group 的子元素应该全是 <g-button />')
             }
         }
     }
@@ -22,12 +23,13 @@ export default {
         display: inline-flex;
         vertical-align: middle;
         > .g-button {
-            border-radius: 0;
-            margin-left: -1px;
+            border-radius: 0px;
+            &:not(:first-child) {
+                margin-left: -1px;
+            }
             &:first-child {
                 border-top-left-radius: var(--border-radius);
                 border-bottom-left-radius: var(--border-radius);
-                margin-left: 0;
             }
             &:last-child {
                 border-top-right-radius: var(--border-radius);
