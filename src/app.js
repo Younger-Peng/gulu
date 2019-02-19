@@ -32,7 +32,6 @@ try {
             }
         })
         vm.$mount()
-        console.log(vm.$el)
         let useElement = vm.$el.querySelector('use')
         let href = useElement.getAttribute('xlink:href')
         expect(href).to.eq('#i-settings')
@@ -112,6 +111,7 @@ try {
 } catch(error) {
     window.errors = [error]
 } finally {
+    window.errors = window.errors || []
     window.errors.forEach(error => {
         console.error(error.message)
     })
