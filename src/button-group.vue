@@ -9,8 +9,7 @@ export default {
     mounted() {
         for (const node of this.$el.children) {
             const name = node.nodeName.toLowerCase()
-            console.log(node.classList)
-            if (name !== 'button' || !node.classList.includes('g-button')) {
+            if (name !== 'button' || !node.classList.value.includes('g-button')) {
                 console.warn('g-button-group 的子元素应该全是 <g-button />')
             }
         }
