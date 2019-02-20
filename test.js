@@ -1,7 +1,17 @@
 const puppeteer = require('puppeteer');
 const p = require('path');
+const static = require('node-static')
+const file = new static.Server('./dist')
+const port = process.env.PORT || 8080
+
+const server = require('http').createServer((req, resp) => {
+    req.addListener('end', () => {
+        file.serve(req, resp)
+    }).resume()
+})
 
 !(async () => {
+    server.listen(port)
     const browser = await puppeteer.launch({ headless: false })
     const page = await browser.newPage()
     await page.setRequestInterception(true)
@@ -28,6 +38,5 @@ const p = require('path');
         }
         await browser.close()
     })
-    const path = p.join(__dirname, 'dist', 'index.html')
-    await page.goto(`file://${path}`)
+    await page.goto(`http://127.0.0.1:${port}`)
 })()
