@@ -33,11 +33,13 @@
 </head>
 <body>
 	<div id="app">
-		<!-- <div class="box">
-			<pl-input value="Michael" disabled></pl-input>
-			<pl-input value="Peter" readonly></pl-input>
+		<div class="box">
+			<pl-input value="Whong" @change="inputChange"></pl-input>
+			<pl-input v-model="message"></pl-input>
+            <p>{{message}}</p>
+            <button @click="message += 1">+1</button>
 			<pl-input value="Walter"></pl-input>
-		</div> -->
+		</div>
 		<div class="box">
 			<!-- <pl-input value="Jack" error="Name is less than 8 letters"></pl-input> -->
 			<pl-input value="Wang" @change="inputChange"></pl-input>
