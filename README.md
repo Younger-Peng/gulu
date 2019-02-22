@@ -1,6 +1,6 @@
-# plearner-wheel - 一个 Vue UI 组件
+## 介绍
 
-Author: Younger-Peng
+这是我在学习 Vue 过程中做的一个 UI 框架，我有两个昵称， Younger-Peng 和 Plearner，所以这个轮子命名为plearner-wheel,希望这个框架对你有用
 
 ## 开始使用
 
@@ -49,10 +49,5 @@ export default {
 }
 ```
 
-4. 引入 svg symbols
-
-```
-<script src="//at.alicdn.com/t/font_848807_jcxxloee6zf.js"></script>
-```
 
 ## 文档
