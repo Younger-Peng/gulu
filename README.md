@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Younger-Peng/gulu.svg?branch=master)](https://travis-ci.org/Younger-Peng/gulu)
+
 ## 介绍
 
 这是我在学习 Vue 过程中做的一个 UI 框架，我有两个昵称， Younger-Peng 和 Plearner，所以这个轮子命名为plearner-wheel,希望这个框架对你有用
