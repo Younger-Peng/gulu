@@ -33,13 +33,14 @@
 </head>
 <body>
 	<div id="app">
-		<div class="box">
+		<!-- <div class="box">
 			<pl-input value="Michael" disabled></pl-input>
 			<pl-input value="Peter" readonly></pl-input>
 			<pl-input value="Walter"></pl-input>
-		</div>
+		</div> -->
 		<div class="box">
-			<pl-input value="Jack" error="Name is less than 8 letters"></pl-input>
+			<!-- <pl-input value="Jack" error="Name is less than 8 letters"></pl-input> -->
+			<pl-input value="Wang" @change="inputChange"></pl-input>
 		</div>
 		<div class="box">
 			<g-button :loading="loading1" @click="loading1 = !loading1">
