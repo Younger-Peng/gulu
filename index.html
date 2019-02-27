@@ -33,6 +33,44 @@
 </head>
 <body>
 	<div id="app">
+		<g-row gutter="20">
+			<g-col>1</g-col>
+			<g-col>2</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col>1</g-col>
+			<g-col>2</g-col>
+			<g-col>3</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col>1</g-col>
+			<g-col>2</g-col>
+			<g-col>3</g-col>
+			<g-col>4</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col span="2">1</g-col>
+			<g-col span="20" offset="2">11</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col span="4">1</g-col>
+			<g-col span="20">11</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col span="4">1</g-col>
+			<g-col span="18" offset="2">11</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col span="4">1</g-col>
+			<g-col span="8" offset="2">2</g-col>
+			<g-col span="8" offset="2">3</g-col>
+		</g-row>
+		<g-row gutter="20">
+			<g-col span="4">1</g-col>
+			<g-col span="4" offset="6">2</g-col>
+			<g-col span="8" offset="2">3</g-col>
+		</g-row>
+		<hr>
 		<div class="box">
 			<pl-input value="Whong" @change="inputChange"></pl-input>
 			<pl-input v-model="message"></pl-input>
