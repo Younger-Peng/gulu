@@ -13,7 +13,6 @@
             align: {
                 type: String,
                 validator(val) {
-                    console.log('val ', val)
                     return ['left', 'center', 'right'].includes(val)
                 }
             }
@@ -22,7 +21,7 @@
             rowStyle() {
                 const { gutter } = this
                 return {
-                    marginLeft: -`-${gutter/2}px`,
+                    marginLeft: `-${gutter/2}px`,
                     marginRight: `-${gutter/2}px`,
                 }
             },
@@ -44,6 +43,7 @@
 <style scoped lang="scss">
   .row{
     display: flex;
+    flex-wrap: wrap;
     &.align-left {
         justify-content: flex-start;
     }
