@@ -23,16 +23,9 @@ new Vue({
         message: 'hi'
     },
     created() {
-        setTimeout(() => {
-            const event = new Event('change')
-            const inputEl = this.$el.querySelector('input')
-            inputEl.dispatchEvent(event)
-            console.log('hi')
-        }, 3000)
+        
     },
     methods: {
-        inputChange(e) {
-            console.log(e)
-        }
+
     }
 })
