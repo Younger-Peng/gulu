@@ -1,34 +1,37 @@
-module.exports = function (config) {
+// Karma configuration
+// Generated on Wed Jul 31 2019 11:11:00 GMT+0800 (中国标准时间)
+const webpackConfig = require('@vue/cli-service/webpack.config.js')
+
+module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
+
+
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'sinon-chai'],
-    client: {
-      chai: {
-        includeStack: true
-      }
-    },
+    frameworks: ['mocha'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'dist/**/*.test.js',
-      'dist/**/*.test.css'
+      'test/*.test.js'
     ],
 
 
     // list of files / patterns to exclude
-    exclude: [],
+    exclude: [
+    ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
+    preprocessors: {
+        "test/*.test.js": ['webpack']
+    },
 
-
+    webpack: webpackConfig,
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -49,7 +52,7 @@ module.exports = function (config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
@@ -59,7 +62,7 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous

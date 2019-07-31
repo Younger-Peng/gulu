@@ -1,12 +1,12 @@
-import Vue from "vue";
-import Demo from "./demo.vue";
-import './index.css'
-import plugin from './components/plugin';
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
 
-Vue.use(plugin);
-
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 new Vue({
-    render: h => h(Demo)
-}).$mount("#app");
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')

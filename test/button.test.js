@@ -1,6 +1,7 @@
 import { expect } from 'chai'
+import sinon from 'sinon'
 import Vue from 'vue'
-import Button from '../src/button'
+import Button from '../src/components/button'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
