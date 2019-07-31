@@ -17,15 +17,30 @@ describe('Row', () => {
         const div = document.createElement('div')
         document.body.appendChild(div)
         
-        div.innerHTML = `
-            <g-row gutter="20">
-                <g-col span="12"></g-col>
-                <g-col span="12"></g-col>
-            </g-row>
-        `
-        const vm = new Vue({
-            el: div
-        })
+        const colConstructor = Vue.extend(Col)
+        const col1 = new colConstructor({
+            propsData: {
+                span: 12
+            }
+        });
+        const col2 = new colConstructor({
+            propsData: {
+                span: 12
+            }
+        });
+        const RowConstructor = Vue.extend(Row)
+        const row = new RowConstructor({
+            propsData: {
+                gutter: 20
+            }
+        });
+        col1.$mount()
+        col2.$mount()
+        row.$mount()
+        row.$el.appendChild(col1.$el)
+        row.$el.appendChild(col2.$el)
+
+        div.appendChild(row.$el)
 
         setTimeout(() => {
             console.log(div.innerHTML)
