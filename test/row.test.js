@@ -1,7 +1,7 @@
-const expect = chai.expect;
+import { expect } from 'chai';
 import Vue from 'vue'
-import Row from '../src/row'
-import Col from '../src/col'
+import Row from '../src/components/row'
+import Col from '../src/components/col'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -16,6 +16,7 @@ describe('Row', () => {
         Vue.component('g-col', Col)
         const div = document.createElement('div')
         document.body.appendChild(div)
+        
         div.innerHTML = `
             <g-row gutter="20">
                 <g-col span="12"></g-col>
@@ -27,7 +28,9 @@ describe('Row', () => {
         })
 
         setTimeout(() => {
+            console.log(div.innerHTML)
             const row = document.getElementsByClassName('row')[0];
+            console.log('row', row)
             expect(getComputedStyle(row).marginLeft).to.eq('-10px')
             expect(getComputedStyle(row).marginRight).to.eq('-10px')
 
