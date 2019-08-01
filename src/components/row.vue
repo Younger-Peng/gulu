@@ -29,14 +29,6 @@
                 const { align } = this
                 return [align && `align-${align}`]
             }
-        },
-        created() {
-
-        },
-        mounted() {
-            this.$children.forEach(vm => {
-                vm.gutter = this.gutter
-            })
         }
     }
 </script>

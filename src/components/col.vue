@@ -36,11 +36,6 @@
         validator
       },
     },
-    data() {
-      return {
-        gutter: 0
-      }
-    },
     computed: {
       colClass() {
         const { span, offset, ipad, narrowPc, pc, widePc } = this
@@ -54,7 +49,7 @@
         ]
       },
       colStyle() {
-        const { gutter } = this
+        const { gutter } = this.$parent;
         return {
           paddingLeft: `${gutter/2}px`,
           paddingRight: `${gutter/2}px`
