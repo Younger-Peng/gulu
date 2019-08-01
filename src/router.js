@@ -23,6 +23,11 @@ export default new Router({
       path: '/grid',
       name: 'grid',
       component: () => import('./views/Grid.vue')
-    }
+    },
+    {
+      path: '/layout',
+      name: 'layout',
+      component: () => import('./views/Layout.vue')
+    },
   ]
 })
