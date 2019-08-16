@@ -1,10 +1,10 @@
 <template>
-    <div class="toast" ref="container">
+    <div :class="toastClass" ref="container">
         <span v-if="enableHTML" class="message" v-html="$slots.default[0]"></span>
         <span v-else class="message">
             <slot></slot>
         </span>
-        <div class="line" :style="{height: height, width: '10px'}"></div>
+        <div class="line" :style="{height: height, width: '1px'}"></div>
         <span class="close-txt" v-if="closeButton" @click="cb">{{closeButton.text}}</span>
     </div>
 </template>
@@ -39,10 +39,25 @@
             enableHTML: {
                 type: Boolean,
                 default: false
+            },
+            position: {
+                type: String,
+                default: 'top',
+                validator(val) {
+                    return ['top', 'middle', 'bottom'].indexOf(val) >= 0
+                }
             }
         },
         created() {
             console.log(this.enableHTML)
+        },
+        computed: {
+            toastClass() {
+                return {
+                    toast: true,
+                    [this.position]: true
+                }
+            }
         },
         mounted() {
             if (this.autoClose) {
@@ -73,14 +88,24 @@
 <style lang="scss">
     .toast {
         position: fixed;
-        top: 5vh;
         left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.55);
+        background: rgba(0, 0, 0, 1);
         color: white;
         border-radius: 0.3em;
         display: flex;
         align-items: center;
+    }
+    .toast.top {
+        top: 5vh;
+        transform: translateX(-50%);
+    }
+    .toast.middle {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .toast.bottom {
+        bottom: 0;
+        transform: translateX(-50%);
     }
     .message {
         padding: 0.5em 0 0.5em 1em;
@@ -91,6 +116,6 @@
     }
     .line {
         margin: 0 1em;
-        background: red;
+        background: #fff;
     }
 </style>

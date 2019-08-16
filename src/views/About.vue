@@ -10,14 +10,15 @@ export default {
         showToast() {
             this.$toast({
                 autoClose: false,
-                message: '我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字我是强调的文字',
+                message: `Your IQ is ${parseInt(Math.random() * 100)}`,
                 enableHTML: true,
                 closeButton: {
                     text: 'know',
                     callback() {
                         console.log('User says he knows.')
                     }
-                }
+                },
+                position: 'bottom'
             })
         }
     }
